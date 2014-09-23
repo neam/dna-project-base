@@ -1,0 +1,3 @@
+[submodule "components/composer-packages/app-config-as-php-constants"]
+	path = components/composer-packages/php-app-config
+	url = https://github.com/neam/app-config-as-php-constants.git
