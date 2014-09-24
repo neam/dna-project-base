@@ -4,3 +4,6 @@
 [submodule "components/composer-packages/vagrant-docker-local-dev-vm"]
 	path = components/composer-packages/vagrant-docker-local-dev-vm
 	url = https://github.com/neam/vagrant-docker-local-dev-vm.git
+[submodule "components/composer-packages/yii-dna-deployment"]
+	path = components/composer-packages/yii-dna-deployment
+	url = https://github.com/neam/yii-dna-deployment.git
