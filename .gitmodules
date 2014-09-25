@@ -13,3 +13,6 @@
 [submodule "components/composer-packages/yii-dna-test-framework"]
 	path = components/composer-packages/yii-dna-test-framework
 	url = https://github.com/neam/yii-dna-test-framework.git
+[submodule "components/composer-packages/yii-dna-debug-modes-and-error-handling"]
+	path = components/composer-packages/yii-dna-debug-modes-and-error-handling
+	url = https://github.com/neam/yii-dna-debug-modes-and-error-handling.git
