@@ -1,9 +1,6 @@
 [submodule "components/composer-packages/app-config-as-php-constants"]
 	path = components/composer-packages/php-app-config
 	url = https://github.com/neam/app-config-as-php-constants.git
-[submodule "components/composer-packages/vagrant-docker-local-dev-vm"]
-	path = components/composer-packages/vagrant-docker-local-dev-vm
-	url = https://github.com/neam/vagrant-docker-local-dev-vm.git
 [submodule "components/composer-packages/yii-dna-deployment"]
 	path = components/composer-packages/yii-dna-deployment
 	url = https://github.com/neam/yii-dna-deployment.git
@@ -20,3 +17,6 @@
 	path = components/tools/dna-code-generator
 	url = https://github.com/neam/dna-code-generator
 	branch = phundament-as-dna-code-generator
+[submodule "components/composer-packages/docker-stack"]
+	path = components/composer-packages/docker-stack
+	url = https://github.com/neam/docker-stack.git
