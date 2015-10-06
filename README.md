@@ -34,3 +34,9 @@ You need to maintain the following in your DNA Project Base projects (the projec
 7. Deploy your backend to Tutum
 8. Set up monitoring for your deployment (logs, server health, uptime)
 9. Set up automated builds and continuous integration (CI)
+
+## The anatomy of a DNA-driven project
+
+A certain directory structure and file contents / conventions are imposed in order to facilitate a high level of code re-use between projects. 
+
+See the full documentation here: [./docs/anatomy.md](https://github.com/neam/dna-project-base/foooooo)

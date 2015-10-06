@@ -6,6 +6,7 @@ A certain directory structure and file contents / conventions are imposed in ord
 A typical DNA-driven project will contain the following:
 
     .
+    ├── .db
     ├── .docker-stack
     ├── .dockerignore
     ├── .env
@@ -110,36 +111,45 @@ A typical DNA-driven project will contain the following:
     │   ├── stop.sh
     │   └── tester-shell.sh
     ├── external-apis
-    │   ├── files-api
+    │   ├── rest-api
     │   │   ├── composer.json
     │   │   ├── composer.lock
     │   │   └── vendor
-    │   ├── stats-api
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   └── partner-api
-    │       ├── composer.json
-    │       ├── composer.lock
-    │       └── vendor
     ├── tools
     │   └── code-generator
     │   │   ├── composer.json
     │   │   ├── composer.lock
     │   │   └── vendor
     ├── ui
-    │   ├── backend
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   ├── consumer
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   └── partner
-    │       ├── composer.json
-    │       ├── composer.lock
-    │       └── vendor
+    │   ├── angular-frontend
+    │   │   ├── Gruntfile.js
+    │   │   ├── README.md
+    │   │   ├── app
+    │   │   │   ├── less
+    │   │   │   ├── scripts
+    │   │   │   ├── styles
+    │   │   │   └── views
+    │   │   ├── bower.json
+    │   │   ├── bower_components
+    │   │   ├── build.sh
+    │   │   ├── deploy.sh
+    │   │   ├── develop.sh
+    │   │   ├── dist
+    │   │   ├── dna-boilerplate
+    │   │   ├── full-build.sh
+    │   │   ├── node_modules
+    │   │   └── package.json
+    │   └── angular-frontend-dna
+    │      ├── app
+    │      │   ├── crud
+    │      │   ├── images
+    │      │   ├── index.html
+    │      │   ├── less
+    │      │   ├── modals
+    │      │   ├── scripts
+    │      │   ├── styles
+    │      │   └── views
+    │      └── provider-bootstrap.php
     └── vendor
         ├── autoload.php
         ├── bin
@@ -152,6 +162,8 @@ A typical DNA-driven project will contain the following:
 Let's break that down...
 
 ## The DNA
+
+Houses the common dependencies and code/components shared by all PHP-backed applications - mostly models and content model metadata.
 
     .
     ├── dna
@@ -167,46 +179,87 @@ Let's break that down...
     │   ├── console
     │   ├── db
     │   ├── dna-api-revisions
+    │   ├── generated-classes
+    │   ├── generated-conf
+    │   ├── generated-reversed-database
     │   ├── exceptions
     │   ├── fixtures
     │   ├── models
+    │   ├── traits
     │   ├── tests
     │   └── vendor
 
 ## Docker/docker-stack
     
-The server stack is used for local development and for remote deployment
+The server stack is used for local development and for remote deployment. 
+
+Full documentation available here: [DNA Project Base Stack (Based on Debian PHP/Nginx)](https://github.com/neam/docker-stack/blob/develop/stacks/debian-php-nginx.dna-project-base/README.md)
     
     ├── .docker-stack
     ├── .dockerignore
     ├── .stack.nginx.Dockerfile
     ├── .stack.php.Dockerfile
+    ├── docker-compose.yml
     ├── stack
     │   ├── .gitignore
     │   ├── README.md
-    │   ├── db-set-local-config.sh
-    │   ├── db-start.sh
     │   ├── docker-compose-production-tutum-router.yml
     │   ├── docker-compose-production-tutum.yml
     │   ├── docker-compose-production.yml
+    │   ├── localdb
+    │   │   ├── .db
+    │   │   └── run.sh
     │   ├── logs.sh
     │   ├── nginx
+    │   │   ├── conf.d
+    │   │   │   ├── 00-basics.conf
+    │   │   │   ├── app.conf
+    │   │   │   └── php-fpm.conf
+    │   │   ├── include
+    │   │   │   ├── backend-location-defaults.conf
+    │   │   │   └── location-defaults.conf
+    │   │   ├── nginx.conf
+    │   │   └── run.sh
+    │   ├── open-browser.sh
     │   ├── php
+    │   │   ├── conf.d
+    │   │   │   ├── 00-basics.ini
+    │   │   │   └── app.ini
+    │   │   ├── conf.d-local
+    │   │   │   └── local.ini
+    │   │   ├── image
+    │   │   │   ├── Dockerfile
+    │   │   ├── php-fpm.conf
+    │   │   ├── pool.d
+    │   │   │   └── www.conf
+    │   │   ├── run.sh
+    │   │   └── yet-unused
+    │   │       ├── newrelic.ini
+    │   │       └── xdebug.ini
     │   ├── setup.sh
     │   ├── shell.sh
     │   ├── src
+    │   │   ├── build.sh
+    │   │   ├── git-pull-recursive.sh
+    │   │   ├── install-deps.sh
+    │   │   ├── reset-vendor.sh
+    │   │   ├── set-writable-local.sh
+    │   │   └── set-writable-remote.sh
     │   ├── start.sh
     │   ├── stop.sh
     │   └── tester-shell.sh
-    ├── docker-compose.yml
 
 ## Local development configuration
+
+The $_ENV array is populated by the contents of the `.env` file when running the software locally.
 
     ├── .env
     ├── .env.dist
 
 ## Local development /files host mount directory    
-    
+
+Used if your project requires local file handling (such as file uploads directly to your software).
+
     ├── .files
     │   ├── data1
     │   │   └── media
@@ -245,6 +298,8 @@ These are often simple shorthands that execute the re-usable and easily upgradab
 
 ## Dependency-management
 
+External re-usable dependencies are mainly handled by Composer while internal division of project components/modules is managed via git submodules. 
+
     ├── .gitmodules
     ├── composer.json
     ├── composer.lock
@@ -255,8 +310,13 @@ These are often simple shorthands that execute the re-usable and easily upgradab
     │   ├── composer
     │   ├── neam
     │   └── yiisoft
+    ├── stack
+    │   ├── src
+    │   │   ├── install-deps.sh
 
 ## Config-management
+
+12-factor config handling
 
     ├── config
     │   ├── local
@@ -292,10 +352,16 @@ These are often simple shorthands that execute the re-usable and easily upgradab
     │   ├── 11-overview-components.md
     │   ├── 20-local-dev-introduction.md
     │   ├── 21-local-dev-first-time-set-up.md
-    │   ├── 22-local-dev-update-to-the-latest-changes.md
+    │   ├── 22-local-dev-pulling-in-changes-from-teammates.md
     │   ├── 23-local-dev-working-with-data.md
+    │   ├── 24-local-dev-working-with-tests.md
+    │   ├── 25-local-dev-code-generation.md
     │   ├── 50-deploy-overview.md
     │   ├── 52-deploy-tutum.md
+    │   ├── 60-release-routines.md
+    │   ├── 61-live-troubleshooting.md
+    │   ├── 62-if-something-is-wrong-with-the-latest-release.md
+    │   ├── 63-staging-new-features.md
     │   └── README.md
 
 ## DNA Code Generator
@@ -306,31 +372,53 @@ These are often simple shorthands that execute the re-usable and easily upgradab
     │       ├── composer.lock
     │       └── vendor
     
-## The public internal applications within the 12-factor app
+## The public applications within the 12-factor app
+
+PHP-powered REST API: 
 
     ├── external-apis
-    │   ├── files-api
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   ├── stats-api
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   └── partner-api
+    │   └── rest-api
     │       ├── composer.json
     │       ├── composer.lock
     │       └── vendor
+
+Javascript-based frontend:
+
     ├── ui
-    │   ├── backend
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   ├── consumer
-    │   │   ├── composer.json
-    │   │   ├── composer.lock
-    │   │   └── vendor
-    │   └── partner
-    │       ├── composer.json
-    │       ├── composer.lock
-    │       └── vendor
+    
+The Angular.JS frontend is deployed separately from the PHP-backed application(s) and is divided between two folders: `angular-frontend` and `angular-frontend-dna`.
+
+The `angular-frontend` folder contains the common dependencies and shared code to be re-used across all DNA-driven projects. 
+
+    │   ├── angular-frontend
+    │   │   ├── Gruntfile.js
+    │   │   ├── README.md
+    │   │   ├── app
+    │   │   │   ├── less
+    │   │   │   ├── scripts
+    │   │   │   ├── styles
+    │   │   │   └── views
+    │   │   ├── bower.json
+    │   │   ├── bower_components
+    │   │   ├── build.sh
+    │   │   ├── deploy.sh
+    │   │   ├── develop.sh
+    │   │   ├── dist
+    │   │   ├── dna-boilerplate
+    │   │   ├── full-build.sh
+    │   │   ├── node_modules
+    │   │   └── package.json
+
+The `angular-frontend-dna` folder contains the data-model/product/brand-specific parts that differentiate the project from others.
+    
+    │   └── angular-frontend-dna
+    │      ├── app
+    │      │   ├── crud
+    │      │   ├── images
+    │      │   ├── index.html
+    │      │   ├── less
+    │      │   ├── modals
+    │      │   ├── scripts
+    │      │   ├── styles
+    │      │   └── views
+    │      └── provider-bootstrap.php
