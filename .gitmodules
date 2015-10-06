@@ -16,3 +16,7 @@
 [submodule "components/composer-packages/yii-dna-debug-modes-and-error-handling"]
 	path = components/composer-packages/yii-dna-debug-modes-and-error-handling
 	url = https://github.com/neam/yii-dna-debug-modes-and-error-handling.git
+[submodule "components/tools/dna-code-generator"]
+	path = components/tools/dna-code-generator
+	url = https://github.com/neam/dna-code-generator
+	branch = phundament-as-dna-code-generator
