@@ -49,7 +49,19 @@ See the full documentation here: [./docs/anatomy.md](./docs/anatomy.md)
 
 Whether you are starting from scratch or migrating previous project code, the easiest way to get started may be to generate a new project and then move existing code (if any) into the new project after you have got the basics up and running.
 
-... TODO
+Begin by cloning this repository to a local directory so that we have access to the helper scripts:
+
+    git clone https://github.com/neam/dna-project-base.git
+
+Then prepare the base project repo with submodules:
+
+    cd dna-project-base
+    export PROJECT=example
+    export PUBLISHER=softwareinc
+    export PROJECT_ROOT=projects/$PROJECT-project
+    export REMOTE_URL_TEMPLATE=git@github.com:$PUBLISHER/$PROJECT-_COMPONENT_.git
+    #export REMOTE_URL_TEMPLATE=git@bitbucket.org:$PUBLISHER/$PROJECT-_COMPONENT_.git
+    docker-compose run shell util/init-project.sh $PROJECT_ROOT $PROJECT $REMOTE_URL_TEMPLATE
 
 ## 2. Add your SQL as your project's first data profile
 

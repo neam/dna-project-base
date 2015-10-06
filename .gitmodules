@@ -23,3 +23,6 @@
 [submodule "components/boilerplates/dna-project-boilerplate"]
 	path = components/boilerplates/dna-project-boilerplate
 	url = https://github.com/neam/dna-project-boilerplate.git
+[submodule "boilerplates/12-factor-app"]
+	path = boilerplates/12-factor-app
+	url = git@github.com:neam/dna-project-base-12-factor-app-boilerplate.git
