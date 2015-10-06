@@ -3,9 +3,11 @@ DNA Project Base
 
 Homepage: [http://neamlabs.com/dna-project-base/](http://neamlabs.com/dna-project-base/)
 
-An extremely biased LEMP-based Project Base that allows rapid generation of deployable, testable and maintainable custom applications for enrichment and publishing of user-generated data, which in turn are made available for consumption by end user frontends through a RESTful API.
+An extremely biased PHP-oriented* Docker+LEMP-based Project Base that allows rapid generation of deployable, testable and maintainable custom applications for enrichment and publishing of user-generated data, which in turn are made available for consumption by end user frontends through a RESTful API.
 
 It's main focus is to enable automation in as many aspects of the development process as viable, so that the developers' energy is focused on custom business logic (the "DNA").
+
+*Since the architecture is Docker-centric, micro-services within the project can be written in any server-side language. Most extensions and boilerplate for code-reuse however are currently written in PHP, heavily oriented around the Yii Framework.
 
 ## The DNA Project Base Project Goals
 
