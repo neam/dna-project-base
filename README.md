@@ -33,7 +33,7 @@ You need to maintain the following in your DNA Project Base projects (the projec
 4. Generate the models, the RESTful API controllers and Angular frontend CRUD by using [DNA Code Generator](https://github.com/neam/dna-code-generator)
 5. Test your application locally
 6. Deploy your frontend to Amazon S3
-7. Deploy your backend to Tutum
+7. Deploy your backend to [Tutum](https://www.tutum.co/)
 8. Set up monitoring for your deployment (logs, server health, uptime)
 9. Set up automated builds and continuous integration (CI)
 
@@ -41,4 +41,16 @@ You need to maintain the following in your DNA Project Base projects (the projec
 
 A certain directory structure and file contents / conventions are imposed in order to facilitate a high level of code re-use between projects. 
 
-See the full documentation here: [./docs/anatomy.md](https://github.com/neam/dna-project-base/foooooo)
+See the full documentation here: [./docs/anatomy.md](./docs/anatomy.md)
+
+# Getting started
+
+## 1. Set up the DNA-driven project structure and install dependencies
+
+Whether you are starting from scratch or migrating previous project code, the easiest way to get started may be to generate a new project and then move existing code (if any) into the new project after you have got the basics up and running.
+
+... TODO
+
+## 2. Add your SQL as your project's first data profile
+
+... TODO
