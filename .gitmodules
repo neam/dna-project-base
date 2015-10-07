@@ -20,9 +20,9 @@
 [submodule "components/composer-packages/docker-stack"]
 	path = components/composer-packages/docker-stack
 	url = https://github.com/neam/docker-stack.git
-[submodule "components/boilerplates/dna-project-boilerplate"]
-	path = components/boilerplates/dna-project-boilerplate
-	url = https://github.com/neam/dna-project-boilerplate.git
+[submodule "boilerplates/project-root"]
+	path = boilerplates/project-root
+	url = https://github.com/neam/dna-project-base-project-root-boilerplate.git
 [submodule "boilerplates/12-factor-app"]
 	path = boilerplates/12-factor-app
 	url = git@github.com:neam/dna-project-base-12-factor-app-boilerplate.git
