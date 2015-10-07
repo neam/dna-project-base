@@ -1,18 +1,23 @@
 [submodule "components/composer-packages/app-config-as-php-constants"]
 	path = components/composer-packages/php-app-config
 	url = https://github.com/neam/app-config-as-php-constants.git
+	branch = develop
 [submodule "components/composer-packages/yii-dna-deployment"]
 	path = components/composer-packages/yii-dna-deployment
 	url = https://github.com/neam/yii-dna-deployment.git
+	branch = develop
 [submodule "components/composer-packages/yii-dna-pre-release-testing"]
 	path = components/composer-packages/yii-dna-pre-release-testing
 	url = https://github.com/neam/yii-dna-pre-release-testing.git
+	branch = develop
 [submodule "components/composer-packages/yii-dna-test-framework"]
 	path = components/composer-packages/yii-dna-test-framework
 	url = https://github.com/neam/yii-dna-test-framework.git
+	branch = develop
 [submodule "components/composer-packages/yii-dna-debug-modes-and-error-handling"]
 	path = components/composer-packages/yii-dna-debug-modes-and-error-handling
 	url = https://github.com/neam/yii-dna-debug-modes-and-error-handling.git
+	branch = develop
 [submodule "components/tools/dna-code-generator"]
 	path = components/tools/dna-code-generator
 	url = https://github.com/neam/dna-code-generator
@@ -20,9 +25,12 @@
 [submodule "components/composer-packages/docker-stack"]
 	path = components/composer-packages/docker-stack
 	url = https://github.com/neam/docker-stack.git
+	branch = develop
 [submodule "boilerplates/project-root"]
 	path = boilerplates/project-root
 	url = https://github.com/neam/dna-project-base-project-root-boilerplate.git
+	branch = develop
 [submodule "boilerplates/12-factor-app"]
 	path = boilerplates/12-factor-app
-	url = git@github.com:neam/dna-project-base-12-factor-app-boilerplate.git
+	url = https://github.com/neam/dna-project-base-12-factor-app-boilerplate.git
+	branch = develop
