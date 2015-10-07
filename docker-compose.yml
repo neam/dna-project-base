@@ -1,0 +1,13 @@
+# Docker compose configuration
+
+# A container to run shell commands locally
+shell:
+  image: neam/php-app-builder:0.4.0
+  volumes:
+    - .:/dna-project-base:rw
+    - ../.git:/.git
+    - ~/.gitconfig:/root/.gitconfig
+    - ~/.composer:/root/.composer
+    - ~/.ssh:/root/.ssh:ro
+  working_dir: '/dna-project-base'
+  command: "true"
