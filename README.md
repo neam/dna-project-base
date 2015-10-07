@@ -58,10 +58,15 @@ Then prepare the base project repo with submodules:
     cd dna-project-base
     export PROJECT=example
     export PUBLISHER=softwareinc
-    export PROJECT_ROOT=projects/$PROJECT-project
     export REMOTE_URL_TEMPLATE=git@github.com:$PUBLISHER/$PROJECT-_COMPONENT_.git
     #export REMOTE_URL_TEMPLATE=git@bitbucket.org:$PUBLISHER/$PROJECT-_COMPONENT_.git
-    docker-compose run shell util/init-project.sh $PROJECT_ROOT $PROJECT $REMOTE_URL_TEMPLATE
+    docker-compose run shell util/init-project.sh $PROJECT $REMOTE_URL_TEMPLATE
+
+Open the base project repo in SourceTree:
+
+    stree projects/$PROJECT-project
+    
+Push. Other developers may then get the complete source code of the project by cloning the main project repo.
 
 ## 2. Add your SQL as your project's first data profile
 
