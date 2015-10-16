@@ -7,6 +7,8 @@ An extremely biased PHP-oriented* Docker+LEMP-based Project Base that allows rap
 
 It's main focus is to enable automation in as many aspects of the development process as viable, so that the developers' energy is focused on custom business logic (the "DNA").
 
+Also includes sample documentation on how to use the stack for a wide range of web app development workflows. 
+
 *Since the architecture is Docker-centric, micro-services within the project can be written in any server-side language. Most extensions and boilerplate for code-reuse however are currently written in PHP, heavily oriented around the Yii Framework.
 
 ## The DNA Project Base Project Goals
@@ -18,6 +20,7 @@ DNA Project Base should assist in:
 * Testing the above applications
 * Deploying the above applications (to a Docker container platform)
 * Monitoring deployed projects
+* Providing best-practice development routines and workflows
 
 ## Requirements
 
