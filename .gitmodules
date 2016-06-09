@@ -1,6 +1,6 @@
-[submodule "components/composer-packages/app-config-as-php-constants"]
+[submodule "components/composer-packages/php-app-config"]
 	path = components/composer-packages/php-app-config
-	url = https://github.com/neam/app-config-as-php-constants.git
+  url = https://github.com/neam/php-app-config.git
 	branch = develop
 [submodule "components/composer-packages/yii-dna-deployment"]
 	path = components/composer-packages/yii-dna-deployment
