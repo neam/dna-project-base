@@ -34,3 +34,9 @@
 	path = boilerplates/12-factor-app
 	url = https://github.com/neam/dna-project-base-12-factor-app-boilerplate.git
 	branch = develop
+[submodule "base-modules/dna-project-base-angular-frontend"]
+	path = base-modules/dna-project-base-angular-frontend
+	url = git@github.com:neam/dna-project-base-angular-frontend.git
+[submodule "base-modules/dna-project-base-rest-api"]
+	path = base-modules/dna-project-base-rest-api
+	url = git@github.com:neam/dna-project-base-rest-api.git
